@@ -5,4 +5,5 @@ console.log("Router is loaded!");
 
 router.get('/',homeControllers.home);
 
+
 module.exports = router;
