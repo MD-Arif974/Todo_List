@@ -1,10 +1,107 @@
 <html>
-    <head>
-        <title>
-            <%= title %>
-        </title>
-    </head>
-    <body>
-        <h1>TodoList/ <%= title%></h1>
-    </body>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="todo-container">
+            <h1>TODO App</h1>
+            <form action = "/tasks" method="post">
+
+                <div class="description-cont">
+                    <span>Description</span><br>
+                   
+                    <input type="text" name="description" class = "description" placeholder="What do you need to do?" required>
+                    
+                   
+    
+                </div>
+    
+                <div class="category-due-container">
+                    <div class="category-cont">
+                        <span class="category-title">CATEGORY</span><br>
+    
+                        <div class="category-name-container">
+                           
+    
+                                <select  name="categories" id="categories">
+                                    <option style = "background: white; color: black;" value="add-to-category">Choose a Category</option>
+                                    <option style = "background: white; color: black;" value="personal">Personal</option>
+                                    <option style = "background: white; color: black;" value="work">Work</option>
+                                    <option style = "background: white; color: black;" value="school">School</option>
+                                    <option style = "background: white; color: black;" value="college">College</option>
+                                    <option style = "background: white; color: black;" value="relation">Relation</option>
+    
+                                </select>
+                            
+                        </div>
+    
+    
+    
+                    </div>
+                    <div class="due-container">
+                        <span>DUE DATE</span><br>
+                        
+                            <input type="date" id="calender-date">
+                       
+    
+                    </div>
+    
+                </div>
+                <div class="btnsContainer">
+                    
+    
+                        <button class="addTask" type = "submit">
+                            <i class="fa-solid fa-plus"></i>
+                            Add Tasks
+                        </button>
+                        <button class="deleteTask">
+                            <i class="fa-solid fa-trash-can"></i>
+    
+                            Delete Tasks
+                        </button>
+                    
+                </div>
+    
+                 <div class = "todoListContainer">
+                    <ul class = "taskListCont">
+    
+                        <% for(let i of taskLists) { %>
+                            <li class = "itemListCont">
+                                <input type = "checkbox" class = "task-check-box">
+                                <div class = "task-name-cont">
+                                   <span><%= i.description %></span>
+                                   <div class = "deadline-cont">
+                                     <i class="fa-solid fa-calendar-days"></i>
+                                     <span><%= i.date %></span>
+                                   </div>
+                                </div> 
+                                <div class = "taskCategory">
+                                     <span><%= i.category %></span>
+                                </div>
+                             </li>
+                        
+                        <%} %>
+                      
+                        
+                    </ul>
+                 </div>
+            </form>
+            
+
+        </div>
+    </div>
+  
+   
+    <script src="/js/script.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,184 @@
+body{
+    margin:0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main container */
+.main-container{
+    width:70vw;
+    height: 90vh;
+    background-color: rgba(255, 255, 255, 0.79);
+    display: flex;
+    justify-content: center;
+}
+/* todo container */
+.todo-container{
+    width:40vw;
+    height:90%;
+    background-color: white;
+}
+.todo-container h1{
+    color: rgba(0, 0, 0, 0.493);
+    text-align: center;
+}
+
+.description-cont{
+      width:100%;
+      height:10%;
+      border:1px solid gray
+}
+.description-cont *{
+    margin-left:10px;
+}
+.description-cont span{
+    color: rgba(0, 0, 0, 0.493);
+    font-size:1.5rem;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.description-cont input{
+    width:95%;
+    font-size:1rem;
+    border:none;
+}
+.description-cont input:focus,textarea:focus,selec:focus{
+    outline: none;
+}
+
+.description-cont:hover{
+    background-color: rgba(128, 128, 128, 0.103);
+}
+/* Category and Due container */
+.category-due-container{
+    width:100%;
+    height: 10%;
+    border:1px solid gray;
+    display: flex;
+}
+
+/* category container */
+.category-cont{
+    width:50%;
+    height:100%;
+   
+}
+
+
+
+.category-cont span{
+    margin-left:10px;
+    color:rgba(0, 0, 0, 0.584);
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.category-cont:hover{
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.103);
+}
+
+.category-name-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* category list */
+#categories{
+    width:20vw;
+    font-size:1.2rem;
+    border:none;
+  
+    
+}
+#categories:focus{
+    outline: none;
+}
+
+
+/* due container */
+.due-container{
+    width:50%;
+    height:100%;
+    border:1px solid gray;
+}
+.due-container:hover{
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.103);
+}
+.due-container span{
+    margin-left:10px;
+    color:rgba(0, 0, 0, 0.489);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.due-container form{
+    margin-left:10px;
+    color:rgba(0, 0, 0, 0.489);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Buttons container */
+.btnsContainer{
+    width:100%;
+    height:8vh;
+    
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.addTask {
+    color:white;
+    font-size: 1.2rem;
+    padding:1rem;
+    background-color: rgba(0, 128, 0, 0.804);
+    margin-right: 15px;
+}
+.deleteTask{
+    color:white;
+    font-size: 1.2rem;
+    padding:1rem;
+    background-color: rgba(255, 0, 0, 0.804);
+}
+
+/* Task List Cont */
+.itemListCont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:15px;
+
+}
+.taskListCont{
+    list-style: none;
+   
+}
+.task-name-cont{
+    margin-left:-310px;
+}
+
+.taskCategory{
+    width:5vw;
+    height:5vh;
+    border:2px solid red;
+    background-color: purple;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.taskCategory span{
+     color:white;
+     font-size:1.2rem;
+     /* text-align: center; */
+    
+}
+.task-check-box{
+    margin-left: -10px;
+    width:2vw;
+    height:3vh;
+}

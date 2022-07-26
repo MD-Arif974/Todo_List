@@ -10,9 +10,12 @@ const app = express();
 app.use(express.static('./assets'));
 
 // set our ejs and views and routes
-app.use('/',require('./routes/todo'));
+app.use('/',require('./routes'));
+// app.use('/',require('./routes/taskList'));
 app.set('view engine','ejs');
 app.set('views','./views');
+
+
 
 
 
