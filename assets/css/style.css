@@ -9,7 +9,7 @@ body{
 /* Main container */
 .main-container{
     width:70vw;
-    height: 90vh;
+    height: auto;
     background-color: rgba(255, 255, 255, 0.79);
     display: flex;
     justify-content: center;
@@ -17,7 +17,7 @@ body{
 /* todo container */
 .todo-container{
     width:40vw;
-    height:90%;
+    height:100%;
     background-color: white;
 }
 .todo-container h1{
@@ -151,6 +151,9 @@ body{
     cursor: pointer;
 }
 /* Task List Cont */
+.todoListContainer{
+    height:auto;
+}
 .itemListCont{
     display: flex;
     justify-content: space-between;
@@ -192,5 +195,5 @@ body{
     border:2px solid red;
 }
 .task-description{
-   
+   font-weight: bold;
 }

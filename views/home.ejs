@@ -81,12 +81,36 @@
                                   <span  class = "task-description"><%= i.description %></span><br>
                                    <div class = "deadline-cont">
                                      <i class="fa-solid fa-calendar-days"></i>
-                                     <span><%= i.date %></span>
+                                     <span><%= moment(i.date).format('MMM DD, YYYY') %></span>
                                    </div>
                                 </div> 
-                                <div class = "taskCategory">
-                                     <span><%= i.categories %></span>
-                                </div>
+
+                                <% if(i.categories == "personal") { %>
+                                    <div class = "taskCategory" style = "background-color: blue;">
+                                        <span><%= i.categories %></span>
+                                   </div>
+                                <% } %>
+                                <% if(i.categories == "work") { %>
+                                    <div class = "taskCategory" style = "background-color: yellow;">
+                                        <span><%= i.categories %></span>
+                                   </div>
+                                <% } %>
+                                <%  if(i.categories == "college") { %>
+                                    <div class = "taskCategory" style = "background-color: green;">
+                                        <span><%= i.categories %></span>
+                                   </div>
+                                <% } %>
+                                <% if(i.categories == "relation") { %>
+                                    <div class = "taskCategory" style = "background-color: red;">
+                                        <span><%= i.categories %></span>
+                                   </div>
+                                <% } %>
+                                <% if(i.categories == "school") { %>
+                                    <div class = "taskCategory" style = "background-color: purple;">
+                                        <span><%= i.categories %></span>
+                                   </div>
+                                <% } %>
+                               
                              </li>
                         
                         <%} %>

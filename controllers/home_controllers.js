@@ -1,5 +1,5 @@
 let Task = require('../models/todo');
-
+let moment = require('moment');
 // var taskLists = [
 //     {
 //         description:"Meeting, At 10 am",
@@ -27,10 +27,12 @@ module.exports = {
         }
         return res.render('home',{
             todos:todos,
-            title:"TODOLIST"
+            title:"TODOLIST",
+            moment
         });
 
     })
      
     }
+    
 };
