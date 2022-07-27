@@ -50,7 +50,7 @@
                     <div class="due-container">
                         <span>DUE DATE</span><br>
                         
-                            <input type="date" id="calender-date">
+                            <input type="date" id="calender-date" name = "date">
                        
     
                     </div>
@@ -70,22 +70,22 @@
                         </button>
                     
                 </div>
-    
+            </form>
                  <div class = "todoListContainer">
                     <ul class = "taskListCont">
     
-                        <% for(let i of taskLists) { %>
+                        <% for(let i of todos) { %>
                             <li class = "itemListCont">
                                 <input type = "checkbox" class = "task-check-box">
                                 <div class = "task-name-cont">
-                                   <span><%= i.description %></span>
+                                  <span  class = "task-description"><%= i.description %></span><br>
                                    <div class = "deadline-cont">
                                      <i class="fa-solid fa-calendar-days"></i>
                                      <span><%= i.date %></span>
                                    </div>
                                 </div> 
                                 <div class = "taskCategory">
-                                     <span><%= i.category %></span>
+                                     <span><%= i.categories %></span>
                                 </div>
                              </li>
                         
@@ -94,7 +94,7 @@
                         
                     </ul>
                  </div>
-            </form>
+         
             
 
         </div>

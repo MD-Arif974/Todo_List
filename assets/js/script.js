@@ -1,9 +1,6 @@
-let categoryCont = document.querySelector(".category-cont");
-let categoryName = document.querySelector(".category-name");
-let categoryList = document.querySelector("#categories");
-let dueDateContainer = document.querySelector(".due-container");
-let addTask = document.querySelector(".addTask");
-let description = document.getElementsByClassName("description");
+
+
+let taskCheckboxList = document.querySelectorAll(".task-check-box");
 let body = document.querySelector("body");
 
 
@@ -12,10 +9,26 @@ let body = document.querySelector("body");
 initilization();
 
 
+// function changeColor(flag) {
+
+   
+//     flag = !flag;
+//     console.log(flag);
+//     if(flag) {
+//         body.style.backgroundColor = "red";
+//     }
+//     else{
+//         body.style.backgroundColor = "black";
+//     }
+  
+// }
 
 
 
-
-function initilization(){
-    // addTask.addEventListener("click",getAllData);
-}
+// function initilization(){
+//     let flag = false;
+//     for(let i=0;i<taskCheckboxList.length;i++) {
+           
+//            taskCheckboxList[i].addEventListener("click",changeColor,flag);
+//     }
+// }

@@ -4,7 +4,7 @@ const homeControllers = require('../controllers/home_controllers');
 console.log("Router is loaded!");
 
 router.get('/',homeControllers.home);
-router.use('/tasks',require("./taskList"));
+router.use('/',require("./tasksList"));
 
 
 module.exports = router;

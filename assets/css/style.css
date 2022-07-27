@@ -137,6 +137,9 @@ body{
     background-color: rgba(0, 128, 0, 0.804);
     margin-right: 15px;
 }
+.addTask:hover{
+    cursor: pointer;
+}
 .deleteTask{
     color:white;
     font-size: 1.2rem;
@@ -144,6 +147,9 @@ body{
     background-color: rgba(255, 0, 0, 0.804);
 }
 
+.deleteTask:hover{
+    cursor: pointer;
+}
 /* Task List Cont */
 .itemListCont{
     display: flex;
@@ -157,7 +163,9 @@ body{
    
 }
 .task-name-cont{
-    margin-left:-310px;
+    margin-left:-250px;
+    border:2px solid grey;
+    width:10vw;
 }
 
 .taskCategory{
@@ -181,4 +189,8 @@ body{
     margin-left: -10px;
     width:2vw;
     height:3vh;
+    border:2px solid red;
+}
+.task-description{
+   
 }
