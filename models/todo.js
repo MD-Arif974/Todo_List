@@ -12,8 +12,14 @@ const newSchema = new mongoose.Schema({
     date:{
         type:String,
         required:true
+    },
+    flag:{
+        type:Boolean,
+        default:false
+        
     }
 });
+
 
 const task = mongoose.model('task',newSchema);
 module.exports = task;

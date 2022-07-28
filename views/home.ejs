@@ -63,12 +63,11 @@
                             <i class="fa-solid fa-plus"></i>
                             Add Tasks
                         </button>
-                        <button class="deleteTask">
-                            <i class="fa-solid fa-trash-can"></i>
-    
-                            Delete Tasks
-                        </button>
-                    
+                        <a href = "/deletechecked-task">
+                            <div class="deleteTask">
+                                <i class="fa-solid fa-trash-can"></i>Delete Tasks
+                            </div>
+                    </a>
                 </div>
             </form>
                  <div class = "todoListContainer">
@@ -76,7 +75,14 @@
     
                         <% for(let i of todos) { %>
                             <li class = "itemListCont">
-                                <input type = "checkbox" class = "task-check-box">
+                                       
+                                  
+                                         <input type = "checkbox"  class = "task-check-box" onclick='window.location.href ="/delete-task/?id=<%=i._id%>&flags=<%=i.flag%>"'> 
+                                    
+                                    
+                                  
+                                
+                              
                                 <div class = "task-name-cont">
                                   <span  class = "task-description"><%= i.description %></span><br>
                                    <div class = "deadline-cont">
@@ -87,12 +93,12 @@
 
                                 <% if(i.categories == "personal") { %>
                                     <div class = "taskCategory" style = "background-color: blue;">
-                                        <span><%= i.categories %></span>
+                                       <span><%= i.categories %></span>
                                    </div>
                                 <% } %>
                                 <% if(i.categories == "work") { %>
                                     <div class = "taskCategory" style = "background-color: yellow;">
-                                        <span><%= i.categories %></span>
+                                       <span><%= i.categories %></span>
                                    </div>
                                 <% } %>
                                 <%  if(i.categories == "college") { %>
@@ -102,7 +108,7 @@
                                 <% } %>
                                 <% if(i.categories == "relation") { %>
                                     <div class = "taskCategory" style = "background-color: red;">
-                                        <span><%= i.categories %></span>
+                                       <span><%= i.categories %></span> 
                                    </div>
                                 <% } %>
                                 <% if(i.categories == "school") { %>
@@ -125,7 +131,7 @@
     </div>
   
    
-    <script src="/js/script.js"></script>
+    <script src="/Js/script.js"></script>
 </body>
 
 </html>

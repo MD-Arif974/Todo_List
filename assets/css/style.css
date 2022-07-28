@@ -208,3 +208,27 @@ body{
 .task-description{
    font-weight: bold;
 }
+
+/* anchor tag */
+/* .currTask{
+    border:1px solid grey;
+    margin-left:-5px;
+    z-index: 1;
+    width:2vw;
+    height:4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.task-check-box{
+    /* width:50%;
+    height:50%; */
+    /* background-color: red; */
+    /* -webkit-appearance: none; */
+    margin-left: 0px;
+    margin-bottom:-5px;
+    
+}
+.task-check-box:hover{
+    cursor: pointer;
+}

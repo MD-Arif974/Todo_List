@@ -1,16 +1,18 @@
 const exp = require('constants');
 const express = require('express');
 const port = 8000;
-
-const db = require('./config/mongoose');
 const app = express();
+const db = require('./config/mongoose');
 
-// importing mongoose
 
 
-// linking our assets to server
+
+
+
+
 
 // This shoule be on top of home page bcoz we cannot get data if the page has been loaded!
+
 app.use(express.urlencoded());
 
 // set our ejs and views and routes
@@ -19,8 +21,9 @@ app.use('/',require('./routes/todo'));
 // app.use('/',require('./routes/taskList'));
 app.set('view engine','ejs');
 app.set('views','./views');
-
 app.use(express.static('./assets'));
+
+// app.use(express.static('./assets'));
 
 
 
