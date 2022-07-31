@@ -76,9 +76,13 @@
                         <% for(let i of todos) { %>
                             <li class = "itemListCont">
                                        
-                                  
-                                         <input type = "checkbox"  class = "task-check-box" onclick='window.location.href ="/delete-task/?id=<%=i._id%>&flags=<%=i.flag%>"'> 
-                                    
+                                  <% if(i.flag === false) {%>
+                                    <input type = "checkbox"  class = "task-check-box" onclick='window.location.href ="/delete-task/?id=<%=i._id%>&flags=<%=i.flag%>"'> 
+                                    <% } %>
+                                        
+                                    <% if(i.flag === true) {%>
+                                        <input type = "checkbox" checked class = "task-check-box" onclick='window.location.href ="/delete-task/?id=<%=i._id%>&flags=<%=i.flag%>"'> 
+                                        <% } %> 
                                     
                                   
                                 
