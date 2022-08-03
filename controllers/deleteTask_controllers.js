@@ -8,7 +8,7 @@ module.exports = {
                 console.log("error while fetching data from database!",err);
             }
             else{
-                console.log(docs.length);
+                // console.log(docs.length);
                 for(let i=0;i<docs.length;i++) {
                     console.log(docs[i]._id.toString());
                     

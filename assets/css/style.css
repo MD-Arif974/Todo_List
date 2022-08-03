@@ -156,6 +156,8 @@ body{
     font-size: 1.2rem;
     padding:1rem;
     background-color: rgba(255, 0, 0, 0.804);
+    border: 2px solid black;
+   
 }
 
 .deleteTask:hover{

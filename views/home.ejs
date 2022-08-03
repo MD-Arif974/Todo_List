@@ -14,127 +14,148 @@
     <div class="main-container">
         <div class="todo-container">
             <h1>TODO App</h1>
-            <form action = "/tasks" method="post">
+            <form action="/tasks" method="post">
 
                 <div class="description-cont">
                     <span>Description</span><br>
-                   
-                    <input type="text" name="description" class = "description" placeholder="What do you need to do?" required>
-                    
-                   
-    
+
+                    <input type="text" name="description" class="description" placeholder="What do you need to do?"
+                        required>
+
+
+
                 </div>
-    
+
                 <div class="category-due-container">
                     <div class="category-cont">
                         <span class="category-title">CATEGORY</span><br>
-    
+
                         <div class="category-name-container">
-                           
-    
-                                <select  name="categories" id="categories">
-                                    <option style = "background: white; color: black;" value="add-to-category">Choose a Category</option>
-                                    <option style = "background: white; color: black;" value="personal">Personal</option>
-                                    <option style = "background: white; color: black;" value="work">Work</option>
-                                    <option style = "background: white; color: black;" value="school">School</option>
-                                    <option style = "background: white; color: black;" value="college">College</option>
-                                    <option style = "background: white; color: black;" value="relation">Relation</option>
-    
-                                </select>
-                            
+
+
+                            <select name="categories" id="categories">
+                                <option style="background: white; color: black;" value="add-to-category">Choose a
+                                    Category</option>
+                                <option style="background: white; color: black;" value="personal">Personal</option>
+                                <option style="background: white; color: black;" value="work">Work</option>
+                                <option style="background: white; color: black;" value="school">School</option>
+                                <option style="background: white; color: black;" value="college">College</option>
+                                <option style="background: white; color: black;" value="relation">Relation</option>
+
+                            </select>
+
                         </div>
-    
-    
-    
+
+
+
                     </div>
                     <div class="due-container">
                         <span>DUE DATE</span><br>
-                        
-                            <input type="date" id="calender-date" name = "date">
-                       
-    
+
+                        <input type="date" id="calender-date" name="date">
+
+
                     </div>
-    
+
                 </div>
                 <div class="btnsContainer">
-                    
-    
-                        <button class="addTask" type = "submit">
-                            <i class="fa-solid fa-plus"></i>
-                            Add Tasks
-                        </button>
-                        <a href = "/deletechecked-task" style = "text-decoration: none;">
-                            <button class="deleteTask">
-                                <i class="fa-solid fa-trash-can"></i>Delete Tasks
-                            </button>
+
+
+                    <button class="addTask" type="submit">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Tasks
+                    </button>
+                    <a href="/deletechecked-task" style="text-decoration: none;">
+                        <div class="deleteTask">
+                            <i class="fa-solid fa-trash-can"></i>&nbsp&nbspDelete Tasks
+                        </div>
                     </a>
                 </div>
             </form>
-                 <div class = "todoListContainer">
-                    <ul class = "taskListCont">
-    
-                        <% for(let i of todos) { %>
-                            <li class = "itemListCont">
-                                       
-                                  <% if(i.flag === false) {%>
-                                    <input type = "checkbox"  class = "task-check-box" onclick='window.location.href ="/delete-task/?id=<%=i._id%>&flags=<%=i.flag%>"'> 
-                                    <% } %>
-                                        
-                                    <% if(i.flag === true) {%>
-                                        <input type = "checkbox" checked class = "task-check-box" onclick='window.location.href ="/delete-task/?id=<%=i._id%>&flags=<%=i.flag%>"'> 
-                                        <% } %> 
-                                    
-                                  
-                                
-                              
-                                <div class = "task-name-cont">
-                                  <span  class = "task-description"><%= i.description %></span><br>
-                                   <div class = "deadline-cont">
-                                     <i class="fa-solid fa-calendar-days"></i>
-                                     <span><%= moment(i.date).format('MMM DD, YYYY') %></span>
-                                   </div>
-                                </div> 
+            <div class="todoListContainer">
+                <ul class="taskListCont">
 
-                                <% if(i.categories == "personal") { %>
-                                    <div class = "taskCategory" style = "background-color: blue;">
-                                       <span><%= i.categories %></span>
-                                   </div>
+                    <% for(let i of todos) { %>
+                        <li class="itemListCont">
+
+                            <% if(i.flag===false) {%>
+                                <input type="checkbox" class="task-check-box"
+                                    onclick='window.location.href ="/delete-task/?id=<%=i._id%>&flags=<%=i.flag%>"'>
                                 <% } %>
-                                <% if(i.categories == "work") { %>
-                                    <div class = "taskCategory" style = "background-color: yellow;">
-                                       <span><%= i.categories %></span>
-                                   </div>
-                                <% } %>
-                                <%  if(i.categories == "college") { %>
-                                    <div class = "taskCategory" style = "background-color: green;">
-                                        <span><%= i.categories %></span>
-                                   </div>
-                                <% } %>
-                                <% if(i.categories == "relation") { %>
-                                    <div class = "taskCategory" style = "background-color: red;">
-                                       <span><%= i.categories %></span> 
-                                   </div>
-                                <% } %>
-                                <% if(i.categories == "school") { %>
-                                    <div class = "taskCategory" style = "background-color: purple;">
-                                        <span><%= i.categories %></span>
-                                   </div>
-                                <% } %>
-                               
-                             </li>
-                        
+
+                                    <% if(i.flag===true) {%>
+                                        <input type="checkbox" checked class="task-check-box"
+                                            onclick='window.location.href ="/delete-task/?id=<%=i._id%>&flags=<%=i.flag%>"'>
+                                        <% } %>
+
+
+
+
+                                            <div class="task-name-cont">
+                                                <span class="task-description">
+                                                    <%= i.description %>
+                                                </span><br>
+                                                <div class="deadline-cont">
+                                                    <i class="fa-solid fa-calendar-days"></i>
+                                                    <span>
+                                                        <%= moment(i.date).format('MMM DD, YYYY') %>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <% if(i.categories=="personal" ) { %>
+                                                <div class="taskCategory" style="background-color: blue;">
+                                                    <span>
+                                                        <%= i.categories %>
+                                                    </span>
+                                                </div>
+                                                <% } %>
+                                                    <% if(i.categories=="work" ) { %>
+                                                        <div class="taskCategory" style="background-color: yellow;">
+                                                            <span>
+                                                                <%= i.categories %>
+                                                            </span>
+                                                        </div>
+                                                        <% } %>
+                                                            <% if(i.categories=="college" ) { %>
+                                                                <div class="taskCategory"
+                                                                    style="background-color: green;">
+                                                                    <span>
+                                                                        <%= i.categories %>
+                                                                    </span>
+                                                                </div>
+                                                                <% } %>
+                                                                    <% if(i.categories=="relation" ) { %>
+                                                                        <div class="taskCategory"
+                                                                            style="background-color: red;">
+                                                                            <span>
+                                                                                <%= i.categories %>
+                                                                            </span>
+                                                                        </div>
+                                                                        <% } %>
+                                                                            <% if(i.categories=="school" ) { %>
+                                                                                <div class="taskCategory"
+                                                                                    style="background-color: purple;">
+                                                                                    <span>
+                                                                                        <%= i.categories %>
+                                                                                    </span>
+                                                                                </div>
+                                                                                <% } %>
+
+                        </li>
+
                         <%} %>
-                      
-                        
-                    </ul>
-                 </div>
-         
-            
+
+
+                </ul>
+            </div>
+
+
 
         </div>
     </div>
-  
-   
+
+
     <script src="/Js/script.js"></script>
 </body>
 
